@@ -10,16 +10,11 @@ namespace Minesweeper
 {
     public class Playground
     {
+        public Field[,] spielfeld;
+
         public static void setMines(int mines)
         {            
-            for (int i = 0; i <= mines; i++)
-            {                
-                int seed = Convert.ToInt32(Regex.Match(Guid.NewGuid().ToString(), @"\d+").Value);
-                int x = new Random(seed).Next(1, 3);
-                int y = new Random(seed).Next(1, 3);
-
-                Form1.myDataGridView.GetRow();
-            }
+            
         }
     }
 }

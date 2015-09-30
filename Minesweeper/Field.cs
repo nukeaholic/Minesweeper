@@ -7,10 +7,11 @@ using System.Windows.Forms;
 
 namespace Minesweeper
 {
-    class Field : Button
+    public class Field : Button
     {
         public Boolean mine = false;
-        public int surroundings = 0;
+        public int suMines = 0;
+        public List <Field> surroundings = new List <Field>();
 
 
         public Field()
