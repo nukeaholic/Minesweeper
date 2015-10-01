@@ -12,9 +12,6 @@ namespace Minesweeper
     {
         public Field[,] spielfeld;
 
-        public static void setMines(int mines)
-        {            
-            
-        }
+        
     }
 }

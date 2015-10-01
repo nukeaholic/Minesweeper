@@ -28,13 +28,82 @@ namespace Minesweeper
                 for (int k = 0; k < y; k++)
                 {
                     playground.spielfeld[i,k]= new Field();
-                    playground.spielfeld[i, k].Text = i + "," + k+", "+playground.spielfeld[i,k].suMines;
+                    
 
                     myDataGridView.Controls.Add(playground.spielfeld[i,k], i, k);
+
+                    int a = i;
+                    int b = k;
+
+                    i--;
+                    if (i >= 0 && i < x && k >= 0 && k < y)
+                    {
+                        playground.spielfeld[a, b].surroundings.Add(playground.spielfeld[i, k]);
+                        Console.WriteLine(i + "" + k);
+                    }
+                    
+                    k--;
+                    if (i >= 0 && i < x && k >= 0 && k < y)
+                    {
+                        playground.spielfeld[a, b].surroundings.Add(playground.spielfeld[i, k]);
+                        Console.WriteLine(i + "" + k);
+                    }
+
+                    i++;
+                    if (i >= 0 && i < x && k >= 0 && k < y)
+                    {
+                        playground.spielfeld[a, b].surroundings.Add(playground.spielfeld[i, k]);
+                        Console.WriteLine(i + "" + k);
+                    }
+                    
+                    i++;
+                    if (i >= 0 && i < x && k >= 0 && k < y)
+                    {
+                        playground.spielfeld[a, b].surroundings.Add(playground.spielfeld[i, k]);
+                        Console.WriteLine(i + "" + k);
+                    }
+                    
+                    k++;
+                    if (i >= 0 && i < x && k >= 0 && k < y)
+                    {
+                        playground.spielfeld[a, b].surroundings.Add(playground.spielfeld[i, k]);
+                        Console.WriteLine(i + "" + k);
+                    }
+                    
+                    k++;
+                    if (i >= 0 && i < x && k >= 0 && k < y)
+                    {
+                        playground.spielfeld[a, b].surroundings.Add(playground.spielfeld[i, k]);
+                        Console.WriteLine(i + "" + k);
+                    }
+                    
+                    i--;
+                    if (i >= 0 && i < x && k >= 0 && k < y)
+                    {
+                        playground.spielfeld[a, b].surroundings.Add(playground.spielfeld[i, k]);
+                        Console.WriteLine(i + "" + k);
+                    }
+                    
+                        
+                    i--;
+                    if (i >= 0 && i < x && k >= 0 && k < y)
+                    {
+                        playground.spielfeld[a, b].surroundings.Add(playground.spielfeld[i, k]);
+                        Console.WriteLine(i + "" + k);
+                    }
+
+
+                    playground.spielfeld[a, b].Text = a + "," + b;
+
+                    i = a;
+                    k = b;
+
+                    Console.WriteLine("****************************************");
                 }
             }
 
-            myDataGridView.AutoSize = true;
+            Console.WriteLine("****************************************");
+            Console.WriteLine("****************************************");
 
             Random rnd = new Random();
             for (int j = 0; j < mines; j++)
@@ -42,9 +111,17 @@ namespace Minesweeper
                 int xx = rnd.Next(x);
                 int yy = rnd.Next(y);
 
-                if (playground.spielfeld[xx, yy].mine == false){
-                    Console.WriteLine(xx + "\n" + yy+"\n");
+                if (playground.spielfeld[xx, yy].mine == false)
+                {
+                    Console.WriteLine(xx + "\n" + yy + "\n");
                     playground.spielfeld[xx, yy].mine = true;
+
+                    playground.spielfeld[xx, yy].Text = "Mine";
+
+                    foreach (Field feld in playground.spielfeld[xx, yy].surroundings)
+                    {
+                        feld.suMines++;
+                    }
                 }
                 else
                 {
@@ -52,12 +129,13 @@ namespace Minesweeper
                     Console.WriteLine("***************************************");
                 }
             }
+            myDataGridView.AutoSize = true;            
         }
 
         public Form1()
         {
             InitializeComponent();
-            SetupGrid(2, 2, 3);
+            SetupGrid(2, 2, 2);
         }
     }
 }

@@ -21,6 +21,8 @@ namespace Minesweeper
 
         private void MyClick(object sender, EventArgs e)
         {
+            MessageBox.Show(suMines.ToString());
+            
             if (mine == true)
             {
                 MessageBox.Show("boom");
