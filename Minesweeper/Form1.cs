@@ -123,10 +123,11 @@ namespace Minesweeper
                         feld.suMines++;
                     }
                 }
+
                 else
                 {
                     j--;
-                    Console.WriteLine("***************************************");
+                    Console.WriteLine("****************************************");
                 }
             }
             myDataGridView.AutoSize = true;            
