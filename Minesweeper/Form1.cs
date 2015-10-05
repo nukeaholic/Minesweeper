@@ -23,14 +23,26 @@ namespace Minesweeper
 
             Controls.Add(myDataGridView);
 
+
             for (int i = 0; i < x; i++)
             {
                 for (int k = 0; k < y; k++)
                 {
-                    playground.spielfeld[i,k]= new Field();
-                    
+                    playground.spielfeld[i, k] = new Field();
 
-                    myDataGridView.Controls.Add(playground.spielfeld[i,k], i, k);
+
+                    myDataGridView.Controls.Add(playground.spielfeld[i, k], i, k);
+                }
+            }
+
+
+
+
+            for (int i = 0; i < x; i++)
+            {
+                for (int k = 0; k < y; k++)
+                {
+                    
 
                     int a = i;
                     int b = k;
@@ -93,7 +105,7 @@ namespace Minesweeper
                     }
 
 
-                    playground.spielfeld[a, b].Text = a + "," + b;
+                    //playground.spielfeld[a, b].Text = a + "," + b;
 
                     i = a;
                     k = b;
@@ -116,7 +128,7 @@ namespace Minesweeper
                     Console.WriteLine(xx + "\n" + yy + "\n");
                     playground.spielfeld[xx, yy].mine = true;
 
-                    playground.spielfeld[xx, yy].Text = "Mine";
+                    //playground.spielfeld[xx, yy].Text = "Mine";
 
                     foreach (Field feld in playground.spielfeld[xx, yy].surroundings)
                     {
@@ -136,7 +148,7 @@ namespace Minesweeper
         public Form1()
         {
             InitializeComponent();
-            SetupGrid(2, 2, 2);
+            SetupGrid(10, 5, 5);
         }
     }
 }
