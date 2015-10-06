@@ -10,28 +10,59 @@ namespace Minesweeper
 {
     public class Field : Button
     {
+        Boolean flip = true;
         public Boolean check = false;
         public Boolean mine = false;
+
         public int suMines = 0;
+
         public List <Field> surroundings = new List <Field>();
+
+        
 
 
         public Field()
         {
-            Click += MyClick;
+            MouseDown += MyClick;
         }
 
-        private void MyClick(object sender, EventArgs e)
+        private void MyClick(object sender, MouseEventArgs e)
         {
             //MessageBox.Show(suMines.ToString());
 
             Field button = (Field)sender;
 
-            onClick(button);
+            if (e.Button == System.Windows.Forms.MouseButtons.Left)
+            {
+                onLeftClick(button);
+            }
+            if (e.Button == System.Windows.Forms.MouseButtons.Right)
+            {
+                onRightClick(button);
+            }
+
+            
+
+            
             
         }
 
-        private void onClick(Field button)
+        private void onRightClick(Field button)
+        {
+            if (flip == true)
+            {
+                button.BackColor = Color.OrangeRed;
+                flip = false;
+            }
+
+            else
+            {
+                button.BackColor = Color.Gray;
+                flip = true;
+            }            
+        }
+
+        private void onLeftClick(Field button)
         {
             if (mine == true)
             {
@@ -43,6 +74,7 @@ namespace Minesweeper
                 {
                     button.Text = "" + button.suMines;
                     button.BackColor = Color.White;
+                    button.Enabled = false;
                     button.check = true;
                     foreach (Field feld in button.surroundings)
                     {
@@ -50,7 +82,8 @@ namespace Minesweeper
                         {
                             feld.Text = "" + feld.suMines;
                             button.BackColor = Color.White;
-                            onClick(feld);
+                            button.Enabled = false;
+                            onLeftClick(feld);
                         }
                     }
                 }
@@ -58,6 +91,7 @@ namespace Minesweeper
                 {
                     button.Text = "" + button.suMines;
                     button.BackColor = Color.White;
+                    button.Enabled = false;
                 }
             }
         }

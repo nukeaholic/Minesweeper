@@ -29,6 +29,7 @@ namespace Minesweeper
                 for (int k = 0; k < y; k++)
                 {
                     playground.spielfeld[i, k] = new Field();
+                    playground.spielfeld[i, k].BackColor = Color.Gray;
 
 
                     myDataGridView.Controls.Add(playground.spielfeld[i, k], i, k);
@@ -148,7 +149,7 @@ namespace Minesweeper
         public Form1()
         {
             InitializeComponent();
-            SetupGrid(10, 5, 5);
+            SetupGrid(10, 10, 10);
         }
     }
 }
