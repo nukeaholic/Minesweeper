@@ -89,5 +89,12 @@ namespace Minesweeper
                 }
             }
         }
+
+        private void buttonRevealed(Field button)
+        {
+            button.Text = "" + button.suMines;
+            button.BackColor = Color.White;
+            button.Enabled = false;
+        }
     }
 }
