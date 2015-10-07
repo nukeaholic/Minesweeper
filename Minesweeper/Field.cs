@@ -72,26 +72,20 @@ namespace Minesweeper
             {
                 if (button.suMines == 0)
                 {
-                    button.Text = "" + button.suMines;
-                    button.BackColor = Color.White;
-                    button.Enabled = false;
+                    buttonRevealed(button);
                     button.check = true;
                     foreach (Field feld in button.surroundings)
                     {
                         if (feld.check == false)
                         {
-                            feld.Text = "" + feld.suMines;
-                            button.BackColor = Color.White;
-                            button.Enabled = false;
+                            buttonRevealed(button);
                             onLeftClick(feld);
                         }
                     }
                 }
                 else
                 {
-                    button.Text = "" + button.suMines;
-                    button.BackColor = Color.White;
-                    button.Enabled = false;
+                    buttonRevealed(button);
                 }
             }
         }
