@@ -15,6 +15,7 @@ namespace Minesweeper
         public Boolean mine = false;
 
         public int suMines = 0;
+        
 
         public List <Field> surroundings = new List <Field>();
 
@@ -48,13 +49,31 @@ namespace Minesweeper
             {
                 button.BackColor = Color.OrangeRed;
                 flip = false;
+                Form1.spielfeld.markings++;
+
+                if (button.mine == true)
+                {
+                    Form1.spielfeld.markedMines++;
+                }
             }
 
             else
             {
                 button.BackColor = Color.Gray;
                 flip = true;
-            }            
+                Form1.spielfeld.markings--;
+
+                if (button.mine == true)
+                {
+                    Form1.spielfeld.markedMines--;
+                }
+            }
+
+            if (Form1.spielfeld.markedMines == Form1.spielfeld.mines)
+            {
+                MessageBox.Show("Gewonnen!");
+
+            }
         }
 
         private void onLeftClick(Field button)

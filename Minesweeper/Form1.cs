@@ -15,11 +15,13 @@ namespace Minesweeper
     {
         public static TableLayoutPanel myDataGridView = new TableLayoutPanel();
         
-        public Playground playground = new Playground();
+        public static Playground spielfeld = new Playground();
 
         public void SetupGrid(int x, int y, int mines)
         {
-            playground.spielfeld = new Field[x, y];            
+            spielfeld.mines = mines;
+
+            spielfeld.spielfeld = new Field[x, y];            
 
             Controls.Add(myDataGridView);
 
@@ -28,11 +30,11 @@ namespace Minesweeper
             {
                 for (int k = 0; k < y; k++)
                 {
-                    playground.spielfeld[i, k] = new Field();
-                    playground.spielfeld[i, k].BackColor = Color.Gray;
+                    spielfeld.spielfeld[i, k] = new Field();
+                    spielfeld.spielfeld[i, k].BackColor = Color.Gray;
 
 
-                    myDataGridView.Controls.Add(playground.spielfeld[i, k], i, k);
+                    myDataGridView.Controls.Add(spielfeld.spielfeld[i, k], i, k);
                 }
             }
 
@@ -51,49 +53,49 @@ namespace Minesweeper
                     i--;
                     if (i >= 0 && i < x && k >= 0 && k < y)
                     {
-                        playground.spielfeld[a, b].surroundings.Add(playground.spielfeld[i, k]);
+                        spielfeld.spielfeld[a, b].surroundings.Add(spielfeld.spielfeld[i, k]);
                         Console.WriteLine(i + "" + k);
                     }
                     
                     k--;
                     if (i >= 0 && i < x && k >= 0 && k < y)
                     {
-                        playground.spielfeld[a, b].surroundings.Add(playground.spielfeld[i, k]);
+                        spielfeld.spielfeld[a, b].surroundings.Add(spielfeld.spielfeld[i, k]);
                         Console.WriteLine(i + "" + k);
                     }
 
                     i++;
                     if (i >= 0 && i < x && k >= 0 && k < y)
                     {
-                        playground.spielfeld[a, b].surroundings.Add(playground.spielfeld[i, k]);
+                        spielfeld.spielfeld[a, b].surroundings.Add(spielfeld.spielfeld[i, k]);
                         Console.WriteLine(i + "" + k);
                     }
                     
                     i++;
                     if (i >= 0 && i < x && k >= 0 && k < y)
                     {
-                        playground.spielfeld[a, b].surroundings.Add(playground.spielfeld[i, k]);
+                        spielfeld.spielfeld[a, b].surroundings.Add(spielfeld.spielfeld[i, k]);
                         Console.WriteLine(i + "" + k);
                     }
                     
                     k++;
                     if (i >= 0 && i < x && k >= 0 && k < y)
                     {
-                        playground.spielfeld[a, b].surroundings.Add(playground.spielfeld[i, k]);
+                        spielfeld.spielfeld[a, b].surroundings.Add(spielfeld.spielfeld[i, k]);
                         Console.WriteLine(i + "" + k);
                     }
                     
                     k++;
                     if (i >= 0 && i < x && k >= 0 && k < y)
                     {
-                        playground.spielfeld[a, b].surroundings.Add(playground.spielfeld[i, k]);
+                        spielfeld.spielfeld[a, b].surroundings.Add(spielfeld.spielfeld[i, k]);
                         Console.WriteLine(i + "" + k);
                     }
                     
                     i--;
                     if (i >= 0 && i < x && k >= 0 && k < y)
                     {
-                        playground.spielfeld[a, b].surroundings.Add(playground.spielfeld[i, k]);
+                        spielfeld.spielfeld[a, b].surroundings.Add(spielfeld.spielfeld[i, k]);
                         Console.WriteLine(i + "" + k);
                     }
                     
@@ -101,7 +103,7 @@ namespace Minesweeper
                     i--;
                     if (i >= 0 && i < x && k >= 0 && k < y)
                     {
-                        playground.spielfeld[a, b].surroundings.Add(playground.spielfeld[i, k]);
+                        spielfeld.spielfeld[a, b].surroundings.Add(spielfeld.spielfeld[i, k]);
                         Console.WriteLine(i + "" + k);
                     }
 
@@ -124,14 +126,14 @@ namespace Minesweeper
                 int xx = rnd.Next(x);
                 int yy = rnd.Next(y);
 
-                if (playground.spielfeld[xx, yy].mine == false)
+                if (spielfeld.spielfeld[xx, yy].mine == false)
                 {
                     Console.WriteLine(xx + "\n" + yy + "\n");
-                    playground.spielfeld[xx, yy].mine = true;
+                    spielfeld.spielfeld[xx, yy].mine = true;
 
                     //playground.spielfeld[xx, yy].Text = "Mine";
 
-                    foreach (Field feld in playground.spielfeld[xx, yy].surroundings)
+                    foreach (Field feld in spielfeld.spielfeld[xx, yy].surroundings)
                     {
                         feld.suMines++;
                     }
@@ -149,7 +151,7 @@ namespace Minesweeper
         public Form1()
         {
             InitializeComponent();
-            SetupGrid(20, 20, 10);
+            SetupGrid(10, 10, 10);
         }
     }
 }
