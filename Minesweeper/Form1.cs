@@ -38,87 +38,42 @@ namespace Minesweeper
                 }
             }
 
-
-
-
             for (int i = 0; i < x; i++)
             {
                 for (int k = 0; k < y; k++)
-                {
-                    
-
+                { 
                     int a = i;
                     int b = k;
 
                     i--;
-                    if (i >= 0 && i < x && k >= 0 && k < y)
-                    {
-                        spielfeld.spielfeld[a, b].surroundings.Add(spielfeld.spielfeld[i, k]);
-                        Console.WriteLine(i + "" + k);
-                    }
+                    getSurroundings(i, k, x, y, a, b);
                     
                     k--;
-                    if (i >= 0 && i < x && k >= 0 && k < y)
-                    {
-                        spielfeld.spielfeld[a, b].surroundings.Add(spielfeld.spielfeld[i, k]);
-                        Console.WriteLine(i + "" + k);
-                    }
+                    getSurroundings(i, k, x, y, a, b);
 
                     i++;
-                    if (i >= 0 && i < x && k >= 0 && k < y)
-                    {
-                        spielfeld.spielfeld[a, b].surroundings.Add(spielfeld.spielfeld[i, k]);
-                        Console.WriteLine(i + "" + k);
-                    }
+                    getSurroundings(i, k, x, y, a, b);
                     
                     i++;
-                    if (i >= 0 && i < x && k >= 0 && k < y)
-                    {
-                        spielfeld.spielfeld[a, b].surroundings.Add(spielfeld.spielfeld[i, k]);
-                        Console.WriteLine(i + "" + k);
-                    }
+                    getSurroundings(i, k, x, y, a, b);
                     
                     k++;
-                    if (i >= 0 && i < x && k >= 0 && k < y)
-                    {
-                        spielfeld.spielfeld[a, b].surroundings.Add(spielfeld.spielfeld[i, k]);
-                        Console.WriteLine(i + "" + k);
-                    }
+                    getSurroundings(i, k, x, y, a, b);
                     
                     k++;
-                    if (i >= 0 && i < x && k >= 0 && k < y)
-                    {
-                        spielfeld.spielfeld[a, b].surroundings.Add(spielfeld.spielfeld[i, k]);
-                        Console.WriteLine(i + "" + k);
-                    }
+                    getSurroundings(i, k, x, y, a, b);
                     
                     i--;
-                    if (i >= 0 && i < x && k >= 0 && k < y)
-                    {
-                        spielfeld.spielfeld[a, b].surroundings.Add(spielfeld.spielfeld[i, k]);
-                        Console.WriteLine(i + "" + k);
-                    }
-                    
+                    getSurroundings(i, k, x, y, a, b);                    
                         
                     i--;
-                    if (i >= 0 && i < x && k >= 0 && k < y)
-                    {
-                        spielfeld.spielfeld[a, b].surroundings.Add(spielfeld.spielfeld[i, k]);
-                        Console.WriteLine(i + "" + k);
-                    }
-
-
-                    //playground.spielfeld[a, b].Text = a + "," + b;
+                    getSurroundings(i, k, x, y, a, b);
 
                     i = a;
                     k = b;
-
-                    Console.WriteLine("****************************************");
                 }
             }
 
-            Console.WriteLine("****************************************");
-            Console.WriteLine("****************************************");
 
             Random rnd = new Random();
             for (int j = 0; j < mines; j++)
@@ -128,10 +83,7 @@ namespace Minesweeper
 
                 if (spielfeld.spielfeld[xx, yy].mine == false)
                 {
-                    Console.WriteLine(xx + "\n" + yy + "\n");
                     spielfeld.spielfeld[xx, yy].mine = true;
-
-                    //playground.spielfeld[xx, yy].Text = "Mine";
 
                     foreach (Field feld in spielfeld.spielfeld[xx, yy].surroundings)
                     {
@@ -142,10 +94,17 @@ namespace Minesweeper
                 else
                 {
                     j--;
-                    Console.WriteLine("****************************************");
                 }
             }
             myDataGridView.AutoSize = true;            
+        }
+
+        public void getSurroundings(int i, int k, int x, int y, int a, int b)
+        {
+            if (i >= 0 && i < x && k >= 0 && k < y)
+            {
+                spielfeld.spielfeld[a, b].surroundings.Add(spielfeld.spielfeld[i, k]);
+            }
         }
 
         public Form1()
