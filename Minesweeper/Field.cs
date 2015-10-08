@@ -14,13 +14,9 @@ namespace Minesweeper
         public Boolean check = false;
         public Boolean mine = false;
 
-        public int suMines = 0;
-        
+        public int suMines = 0;        
 
         public List <Field> surroundings = new List <Field>();
-
-        
-
 
         public Field()
         {
@@ -72,7 +68,6 @@ namespace Minesweeper
             if (Form1.spielfeld.markedMines == Form1.spielfeld.mines)
             {
                 MessageBox.Show("Gewonnen!");
-
             }
         }
 
