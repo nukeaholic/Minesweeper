@@ -23,7 +23,7 @@ namespace Minesweeper
 
             spielfeld.spielfeld = new Field[x, y];            
 
-            Controls.Add(myDataGridView);
+            tabControl1.TabPages[1].Controls.Add(myDataGridView);
 
 
             for (int i = 0; i < x; i++)
@@ -110,7 +110,12 @@ namespace Minesweeper
         public Form1()
         {
             InitializeComponent();
-            SetupGrid(10, 10, 10);
+            SetupGrid(2, 2, 2);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedIndex = 1;
         }
     }
 }

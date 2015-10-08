@@ -65,7 +65,7 @@ namespace Minesweeper
                 }
             }
 
-            if (Form1.spielfeld.markedMines == Form1.spielfeld.mines)
+            if (Form1.spielfeld.markedMines == Form1.spielfeld.mines)// && Form1.spielfeld.markedMines == Form1.spielfeld.markings)
             {
                 MessageBox.Show("Gewonnen!");
             }
