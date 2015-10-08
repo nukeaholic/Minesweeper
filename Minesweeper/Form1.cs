@@ -149,7 +149,7 @@ namespace Minesweeper
         public Form1()
         {
             InitializeComponent();
-            SetupGrid(10, 10, 10);
+            SetupGrid(20, 20, 10);
         }
     }
 }

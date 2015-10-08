@@ -40,11 +40,6 @@ namespace Minesweeper
             {
                 onRightClick(button);
             }
-
-            
-
-            
-            
         }
 
         private void onRightClick(Field button)
