@@ -23,7 +23,7 @@ namespace Minesweeper
 
             spielfeld.spielfeld = new Field[x, y];            
 
-            tabControl1.TabPages[1].Controls.Add(myDataGridView);
+            tbctrl_Window.TabPages[1].Controls.Add(myDataGridView);
 
 
             for (int i = 0; i < x; i++)
@@ -109,13 +109,22 @@ namespace Minesweeper
 
         public Form1()
         {
-            InitializeComponent();
-            SetupGrid(2, 2, 2);
+            InitializeComponent();            
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            tabControl1.SelectedIndex = 1;
+            if ((und_X.Value * und_Y.Value)/2 > und_Mines.Value)
+            {
+                SetupGrid(Convert.ToInt32(und_X.Value), Convert.ToInt32(und_Y.Value), Convert.ToInt32(und_Mines.Value));
+                tbctrl_Window.SelectedIndex = 1;
+            }
+
+            else
+            {
+                MessageBox.Show("Zu viele Minen bzw zu kleines Spielfeld!");
+            }
+            
         }
     }
 }
