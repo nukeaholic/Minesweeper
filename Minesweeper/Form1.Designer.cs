@@ -101,6 +101,11 @@
             // und_Mines
             // 
             this.und_Mines.Location = new System.Drawing.Point(415, 106);
+            this.und_Mines.Maximum = new decimal(new int[] {
+            199,
+            0,
+            0,
+            0});
             this.und_Mines.Minimum = new decimal(new int[] {
             2,
             0,
