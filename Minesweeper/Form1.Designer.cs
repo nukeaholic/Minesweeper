@@ -209,8 +209,6 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl tbctrl_Window;
-        private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button btn_start;
         private System.Windows.Forms.Label lbl_Mines;
@@ -219,6 +217,8 @@
         private System.Windows.Forms.NumericUpDown und_Y;
         private System.Windows.Forms.NumericUpDown und_Mines;
         private System.Windows.Forms.NumericUpDown und_X;
+        public System.Windows.Forms.TabControl tbctrl_Window;
+        private System.Windows.Forms.TabPage tabPage1;
 
 
 

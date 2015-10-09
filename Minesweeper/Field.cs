@@ -77,6 +77,7 @@ namespace Minesweeper
             {
                 MessageBox.Show("boom");
             }
+
             else 
             {
                 if (button.suMines == 0)
@@ -92,6 +93,7 @@ namespace Minesweeper
                         }
                     }
                 }
+
                 else
                 {
                     buttonRevealed(button);
