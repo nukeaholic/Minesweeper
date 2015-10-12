@@ -17,6 +17,8 @@ namespace Minesweeper
         
         public static Playground spielfeld = new Playground();
 
+        public double difficulty;
+
         public void SetupGrid(int x, int y, int mines)
         {
             spielfeld.mines = mines;
@@ -114,16 +116,28 @@ namespace Minesweeper
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if ((und_X.Value * und_Y.Value)/2 > und_Mines.Value)
+            
+
+            if (rdb_Easy.Checked == true)
             {
-                SetupGrid(Convert.ToInt32(und_X.Value), Convert.ToInt32(und_Y.Value), Convert.ToInt32(und_Mines.Value));
-                tbctrl_Window.SelectedIndex = 1;
+                difficulty = 0.10;
             }
 
-            else
+            else if (rdb_Medium.Checked == true)
             {
-                MessageBox.Show("Zu viele Minen bzw zu kleines Spielfeld!");
+                difficulty = 0.175;
             }
+
+            else if (rdb_Hard.Checked == true)
+            {
+                difficulty = 0.25;
+            }
+
+            double mines = Convert.ToInt32(und_X.Value) * Convert.ToInt32(und_Y.Value) * difficulty;
+            Console.WriteLine("***************************************\n\n" + mines + "\n\n*******************************************");
+
+            SetupGrid(Convert.ToInt32(und_X.Value), Convert.ToInt32(und_Y.Value), Convert.ToInt32(mines));
+            tbctrl_Window.SelectedIndex = 1;
             
         }
     }

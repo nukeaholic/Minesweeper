@@ -31,17 +31,18 @@
             this.tbctrl_Window = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.und_Y = new System.Windows.Forms.NumericUpDown();
-            this.und_Mines = new System.Windows.Forms.NumericUpDown();
             this.und_X = new System.Windows.Forms.NumericUpDown();
-            this.lbl_Mines = new System.Windows.Forms.Label();
+            this.lbl_difficulty = new System.Windows.Forms.Label();
             this.lbl_Y = new System.Windows.Forms.Label();
             this.lbl_X = new System.Windows.Forms.Label();
             this.btn_start = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.rdb_Easy = new System.Windows.Forms.RadioButton();
+            this.rdb_Medium = new System.Windows.Forms.RadioButton();
+            this.rdb_Hard = new System.Windows.Forms.RadioButton();
             this.tbctrl_Window.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.und_Y)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.und_Mines)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.und_X)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,10 +62,12 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.rdb_Hard);
+            this.tabPage1.Controls.Add(this.rdb_Medium);
+            this.tabPage1.Controls.Add(this.rdb_Easy);
             this.tabPage1.Controls.Add(this.und_Y);
-            this.tabPage1.Controls.Add(this.und_Mines);
             this.tabPage1.Controls.Add(this.und_X);
-            this.tabPage1.Controls.Add(this.lbl_Mines);
+            this.tabPage1.Controls.Add(this.lbl_difficulty);
             this.tabPage1.Controls.Add(this.lbl_Y);
             this.tabPage1.Controls.Add(this.lbl_X);
             this.tabPage1.Controls.Add(this.btn_start);
@@ -85,7 +88,7 @@
             0,
             0});
             this.und_Y.Minimum = new decimal(new int[] {
-            3,
+            4,
             0,
             0,
             0});
@@ -93,28 +96,6 @@
             this.und_Y.Size = new System.Drawing.Size(120, 20);
             this.und_Y.TabIndex = 9;
             this.und_Y.Value = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            // 
-            // und_Mines
-            // 
-            this.und_Mines.Location = new System.Drawing.Point(415, 106);
-            this.und_Mines.Maximum = new decimal(new int[] {
-            199,
-            0,
-            0,
-            0});
-            this.und_Mines.Minimum = new decimal(new int[] {
-            2,
-            0,
-            0,
-            0});
-            this.und_Mines.Name = "und_Mines";
-            this.und_Mines.Size = new System.Drawing.Size(120, 20);
-            this.und_Mines.TabIndex = 8;
-            this.und_Mines.Value = new decimal(new int[] {
             10,
             0,
             0,
@@ -129,7 +110,7 @@
             0,
             0});
             this.und_X.Minimum = new decimal(new int[] {
-            3,
+            4,
             0,
             0,
             0});
@@ -142,14 +123,14 @@
             0,
             0});
             // 
-            // lbl_Mines
+            // lbl_difficulty
             // 
-            this.lbl_Mines.AutoSize = true;
-            this.lbl_Mines.Location = new System.Drawing.Point(467, 67);
-            this.lbl_Mines.Name = "lbl_Mines";
-            this.lbl_Mines.Size = new System.Drawing.Size(36, 13);
-            this.lbl_Mines.TabIndex = 6;
-            this.lbl_Mines.Text = "Minen";
+            this.lbl_difficulty.AutoSize = true;
+            this.lbl_difficulty.Location = new System.Drawing.Point(467, 67);
+            this.lbl_difficulty.Name = "lbl_difficulty";
+            this.lbl_difficulty.Size = new System.Drawing.Size(84, 13);
+            this.lbl_difficulty.TabIndex = 6;
+            this.lbl_difficulty.Text = "Swierigkeitsgrad";
             // 
             // lbl_Y
             // 
@@ -189,6 +170,39 @@
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // rdb_Easy
+            // 
+            this.rdb_Easy.AutoSize = true;
+            this.rdb_Easy.Location = new System.Drawing.Point(470, 106);
+            this.rdb_Easy.Name = "rdb_Easy";
+            this.rdb_Easy.Size = new System.Drawing.Size(61, 17);
+            this.rdb_Easy.TabIndex = 10;
+            this.rdb_Easy.TabStop = true;
+            this.rdb_Easy.Text = "Einfach";
+            this.rdb_Easy.UseVisualStyleBackColor = true;
+            // 
+            // rdb_Medium
+            // 
+            this.rdb_Medium.AutoSize = true;
+            this.rdb_Medium.Location = new System.Drawing.Point(470, 130);
+            this.rdb_Medium.Name = "rdb_Medium";
+            this.rdb_Medium.Size = new System.Drawing.Size(50, 17);
+            this.rdb_Medium.TabIndex = 11;
+            this.rdb_Medium.TabStop = true;
+            this.rdb_Medium.Text = "Mittel";
+            this.rdb_Medium.UseVisualStyleBackColor = true;
+            // 
+            // rdb_Hard
+            // 
+            this.rdb_Hard.AutoSize = true;
+            this.rdb_Hard.Location = new System.Drawing.Point(470, 153);
+            this.rdb_Hard.Name = "rdb_Hard";
+            this.rdb_Hard.Size = new System.Drawing.Size(61, 17);
+            this.rdb_Hard.TabIndex = 12;
+            this.rdb_Hard.TabStop = true;
+            this.rdb_Hard.Text = "Schwer";
+            this.rdb_Hard.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -201,7 +215,6 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.und_Y)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.und_Mines)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.und_X)).EndInit();
             this.ResumeLayout(false);
 
@@ -211,14 +224,16 @@
 
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button btn_start;
-        private System.Windows.Forms.Label lbl_Mines;
+        private System.Windows.Forms.Label lbl_difficulty;
         private System.Windows.Forms.Label lbl_Y;
         private System.Windows.Forms.Label lbl_X;
         private System.Windows.Forms.NumericUpDown und_Y;
-        private System.Windows.Forms.NumericUpDown und_Mines;
         private System.Windows.Forms.NumericUpDown und_X;
         public System.Windows.Forms.TabControl tbctrl_Window;
         private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.RadioButton rdb_Hard;
+        private System.Windows.Forms.RadioButton rdb_Medium;
+        private System.Windows.Forms.RadioButton rdb_Easy;
 
 
 
