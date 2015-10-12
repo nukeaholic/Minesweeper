@@ -10,9 +10,10 @@ namespace Minesweeper
 {
     public class Field : Button
     {
-        Boolean flip = true;
+        private Boolean marked = false;
+        private Boolean flip = true;
         public Boolean check = false;
-        public Boolean mine = false;
+        public Boolean mine = false;        
 
         public int suMines = 0;        
 
@@ -43,6 +44,7 @@ namespace Minesweeper
         {
             if (flip == true)
             {
+                button.marked = true;
                 button.BackColor = Color.OrangeRed;
                 flip = false;
                 Form1.spielfeld.markings++;
@@ -55,6 +57,7 @@ namespace Minesweeper
 
             else
             {
+                button.marked = false;
                 button.BackColor = Color.Gray;
                 flip = true;
                 Form1.spielfeld.markings--;
@@ -64,11 +67,7 @@ namespace Minesweeper
                     Form1.spielfeld.markedMines--;
                 }
             }
-
-            if (Form1.spielfeld.markedMines == Form1.spielfeld.mines)// && Form1.spielfeld.markedMines == Form1.spielfeld.markings)
-            {
-                MessageBox.Show("Gewonnen!");
-            }
+            checkWin();            
         }
 
         private void onLeftClick(Field button)
@@ -99,6 +98,7 @@ namespace Minesweeper
                     buttonRevealed(button);
                 }
             }
+            checkWin();
         }
 
         private void buttonRevealed(Field button)
@@ -106,6 +106,19 @@ namespace Minesweeper
             button.Text = "" + button.suMines;
             button.BackColor = Color.White;
             button.Enabled = false;
+            if (button.marked == true)
+            {
+                button.marked = false;
+                Form1.spielfeld.markings--;
+            }
+        }
+
+        private void checkWin()
+        {
+            if (Form1.spielfeld.markedMines == Form1.spielfeld.mines && Form1.spielfeld.markedMines == Form1.spielfeld.markings)
+            {
+                MessageBox.Show("Gewonnen!");
+            }
         }
     }
 }

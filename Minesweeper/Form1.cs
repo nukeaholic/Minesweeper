@@ -34,6 +34,8 @@ namespace Minesweeper
                 {
                     spielfeld.spielfeld[i, k] = new Field();
                     spielfeld.spielfeld[i, k].BackColor = Color.Gray;
+                    spielfeld.spielfeld[i, k].Width = 30;
+                    spielfeld.spielfeld[i, k].Height = 30;
 
 
                     myDataGridView.Controls.Add(spielfeld.spielfeld[i, k], i, k);
@@ -125,20 +127,27 @@ namespace Minesweeper
 
             else if (rdb_Medium.Checked == true)
             {
-                difficulty = 0.175;
+                difficulty = 0.15;
             }
 
             else if (rdb_Hard.Checked == true)
             {
-                difficulty = 0.25;
+                difficulty = 0.20;
             }
 
-            double mines = Convert.ToInt32(und_X.Value) * Convert.ToInt32(und_Y.Value) * difficulty;
-            Console.WriteLine("***************************************\n\n" + mines + "\n\n*******************************************");
+            if (rdb_Easy.Checked == true || rdb_Medium.Checked == true || rdb_Hard.Checked == true)
+            {
+                double mines = Convert.ToInt32(und_X.Value) * Convert.ToInt32(und_Y.Value) * difficulty;
+                Console.WriteLine("*******************************************\n\n" + mines + "\n\n*******************************************");
 
-            SetupGrid(Convert.ToInt32(und_X.Value), Convert.ToInt32(und_Y.Value), Convert.ToInt32(mines));
-            tbctrl_Window.SelectedIndex = 1;
+                SetupGrid(Convert.ToInt32(und_X.Value), Convert.ToInt32(und_Y.Value), Convert.ToInt32(mines));
+                tbctrl_Window.SelectedIndex = 1;
+            }
             
+            else
+            {
+                MessageBox.Show("Bitte einen Schwierigkeitsgrad auswählen.");
+            }
         }
     }
 }

@@ -88,7 +88,7 @@
             0,
             0});
             this.und_Y.Minimum = new decimal(new int[] {
-            4,
+            5,
             0,
             0,
             0});
@@ -110,7 +110,7 @@
             0,
             0});
             this.und_X.Minimum = new decimal(new int[] {
-            4,
+            5,
             0,
             0,
             0});
