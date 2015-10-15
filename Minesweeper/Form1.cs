@@ -18,6 +18,13 @@ namespace Minesweeper
         public static Playground spielfeld = new Playground();
 
         public double difficulty;
+        public static double mines;
+
+
+        Singleton s1 = Singleton.Instance();
+
+        Singleton s2 = Singleton.Instance();
+
 
         public void SetupGrid(int x, int y, int mines)
         {
@@ -116,7 +123,7 @@ namespace Minesweeper
             InitializeComponent();            
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_Start_onClick(object sender, EventArgs e)
         {
             if (rdb_VeryEasy.Checked == true)
             {
@@ -150,7 +157,7 @@ namespace Minesweeper
 
             if (rdb_VeryEasy.Checked == true || rdb_Easy.Checked == true || rdb_Medium.Checked == true || rdb_Hard.Checked == true || rdb_VeryHard.Checked == true || rdb_Ultra.Checked == true)
             {
-                double mines = Convert.ToInt32(und_X.Value) * Convert.ToInt32(und_Y.Value) * difficulty;
+                mines = Convert.ToInt32(und_X.Value) * Convert.ToInt32(und_Y.Value) * difficulty;
                 Console.WriteLine("*******************************************\n\n" + mines + "\n\n*******************************************");
 
                 SetupGrid(Convert.ToInt32(und_X.Value), Convert.ToInt32(und_Y.Value), Convert.ToInt32(mines));
@@ -161,6 +168,24 @@ namespace Minesweeper
             {
                 MessageBox.Show("Bitte einen Schwierigkeitsgrad auswählen.");
             }
+        }        
+    }
+
+    class Singleton
+    {
+        private static Singleton _instance;
+        protected Singleton()
+        {
+
+        }
+        
+        public static Singleton Instance()
+        {
+            if (_instance == null)
+            {
+                _instance = new Singleton();
+            }
+            return _instance;
         }
     }
 }

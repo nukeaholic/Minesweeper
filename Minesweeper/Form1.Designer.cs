@@ -197,7 +197,7 @@
             this.btn_start.TabIndex = 0;
             this.btn_start.Text = "Spiel starten";
             this.btn_start.UseVisualStyleBackColor = true;
-            this.btn_start.Click += new System.EventHandler(this.button1_Click);
+            this.btn_start.Click += new System.EventHandler(this.btn_Start_onClick);
             // 
             // tabPage2
             // 
@@ -266,8 +266,6 @@
         private System.Windows.Forms.Label lbl_difficulty;
         private System.Windows.Forms.Label lbl_Y;
         private System.Windows.Forms.Label lbl_X;
-        private System.Windows.Forms.NumericUpDown und_Y;
-        private System.Windows.Forms.NumericUpDown und_X;
         public System.Windows.Forms.TabControl tbctrl_Window;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.RadioButton rdb_Hard;
@@ -276,6 +274,8 @@
         private System.Windows.Forms.RadioButton rdb_Ultra;
         private System.Windows.Forms.RadioButton rdb_VeryHard;
         private System.Windows.Forms.RadioButton rdb_VeryEasy;
+        public System.Windows.Forms.NumericUpDown und_Y;
+        public System.Windows.Forms.NumericUpDown und_X;
 
 
 

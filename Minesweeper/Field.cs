@@ -10,12 +10,11 @@ namespace Minesweeper
 {
     public class Field : Button
     {
-        private Boolean marked = false;
         private Boolean flip = true;
         public Boolean check = false;
         public Boolean mine = false;        
 
-        public int suMines = 0;        
+        public int suMines = 0;
 
         public List <Field> surroundings = new List <Field>();
 
@@ -44,30 +43,16 @@ namespace Minesweeper
         {
             if (flip == true)
             {
-                button.marked = true;
                 button.BackColor = Color.OrangeRed;
                 flip = false;
-                Form1.spielfeld.markings++;
-
-                if (button.mine == true)
-                {
-                    Form1.spielfeld.markedMines++;
-                }
             }
 
             else
             {
-                button.marked = false;
                 button.BackColor = Color.Gray;
                 flip = true;
-                Form1.spielfeld.markings--;
-
-                if (button.mine == true)
-                {
-                    Form1.spielfeld.markedMines--;
-                }
             }
-            checkWin();            
+            checkWin();           
         }
 
         private void onLeftClick(Field button)
@@ -103,19 +88,18 @@ namespace Minesweeper
 
         private void buttonRevealed(Field button)
         {
+            Form1.spielfeld.fieldsRevealed++;
             button.Text = "" + button.suMines;
             button.BackColor = Color.White;
             button.Enabled = false;
-            if (button.marked == true)
-            {
-                button.marked = false;
-                Form1.spielfeld.markings--;
-            }
         }
 
-        private void checkWin()
+        public static void checkWin()
         {
-            if (Form1.spielfeld.markedMines == Form1.spielfeld.mines && Form1.spielfeld.markedMines == Form1.spielfeld.markings)
+            int fields = Convert.ToInt32() * Convert.ToInt32(und_Y.Value);
+
+
+            if (Form1.spielfeld.fieldsRevealed == fields - Form1.mines)
             {
                 MessageBox.Show("Gewonnen!");
             }
