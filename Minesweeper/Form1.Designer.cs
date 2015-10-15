@@ -30,6 +30,9 @@
         {
             this.tbctrl_Window = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.rdb_Hard = new System.Windows.Forms.RadioButton();
+            this.rdb_Medium = new System.Windows.Forms.RadioButton();
+            this.rdb_Easy = new System.Windows.Forms.RadioButton();
             this.und_Y = new System.Windows.Forms.NumericUpDown();
             this.und_X = new System.Windows.Forms.NumericUpDown();
             this.lbl_difficulty = new System.Windows.Forms.Label();
@@ -37,9 +40,9 @@
             this.lbl_X = new System.Windows.Forms.Label();
             this.btn_start = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.rdb_Easy = new System.Windows.Forms.RadioButton();
-            this.rdb_Medium = new System.Windows.Forms.RadioButton();
-            this.rdb_Hard = new System.Windows.Forms.RadioButton();
+            this.rdb_Ultra = new System.Windows.Forms.RadioButton();
+            this.rdb_VeryHard = new System.Windows.Forms.RadioButton();
+            this.rdb_VeryEasy = new System.Windows.Forms.RadioButton();
             this.tbctrl_Window.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.und_Y)).BeginInit();
@@ -62,6 +65,9 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.rdb_Ultra);
+            this.tabPage1.Controls.Add(this.rdb_VeryHard);
+            this.tabPage1.Controls.Add(this.rdb_VeryEasy);
             this.tabPage1.Controls.Add(this.rdb_Hard);
             this.tabPage1.Controls.Add(this.rdb_Medium);
             this.tabPage1.Controls.Add(this.rdb_Easy);
@@ -78,6 +84,39 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // rdb_Hard
+            // 
+            this.rdb_Hard.AutoSize = true;
+            this.rdb_Hard.Location = new System.Drawing.Point(470, 187);
+            this.rdb_Hard.Name = "rdb_Hard";
+            this.rdb_Hard.Size = new System.Drawing.Size(61, 17);
+            this.rdb_Hard.TabIndex = 12;
+            this.rdb_Hard.TabStop = true;
+            this.rdb_Hard.Text = "Schwer";
+            this.rdb_Hard.UseVisualStyleBackColor = true;
+            // 
+            // rdb_Medium
+            // 
+            this.rdb_Medium.AutoSize = true;
+            this.rdb_Medium.Location = new System.Drawing.Point(470, 164);
+            this.rdb_Medium.Name = "rdb_Medium";
+            this.rdb_Medium.Size = new System.Drawing.Size(50, 17);
+            this.rdb_Medium.TabIndex = 11;
+            this.rdb_Medium.TabStop = true;
+            this.rdb_Medium.Text = "Mittel";
+            this.rdb_Medium.UseVisualStyleBackColor = true;
+            // 
+            // rdb_Easy
+            // 
+            this.rdb_Easy.AutoSize = true;
+            this.rdb_Easy.Location = new System.Drawing.Point(470, 140);
+            this.rdb_Easy.Name = "rdb_Easy";
+            this.rdb_Easy.Size = new System.Drawing.Size(61, 17);
+            this.rdb_Easy.TabIndex = 10;
+            this.rdb_Easy.TabStop = true;
+            this.rdb_Easy.Text = "Einfach";
+            this.rdb_Easy.UseVisualStyleBackColor = true;
             // 
             // und_Y
             // 
@@ -170,38 +209,38 @@
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // rdb_Easy
+            // rdb_Ultra
             // 
-            this.rdb_Easy.AutoSize = true;
-            this.rdb_Easy.Location = new System.Drawing.Point(470, 106);
-            this.rdb_Easy.Name = "rdb_Easy";
-            this.rdb_Easy.Size = new System.Drawing.Size(61, 17);
-            this.rdb_Easy.TabIndex = 10;
-            this.rdb_Easy.TabStop = true;
-            this.rdb_Easy.Text = "Einfach";
-            this.rdb_Easy.UseVisualStyleBackColor = true;
+            this.rdb_Ultra.AutoSize = true;
+            this.rdb_Ultra.Location = new System.Drawing.Point(470, 233);
+            this.rdb_Ultra.Name = "rdb_Ultra";
+            this.rdb_Ultra.Size = new System.Drawing.Size(47, 17);
+            this.rdb_Ultra.TabIndex = 15;
+            this.rdb_Ultra.TabStop = true;
+            this.rdb_Ultra.Text = "Ultra";
+            this.rdb_Ultra.UseVisualStyleBackColor = true;
             // 
-            // rdb_Medium
+            // rdb_VeryHard
             // 
-            this.rdb_Medium.AutoSize = true;
-            this.rdb_Medium.Location = new System.Drawing.Point(470, 130);
-            this.rdb_Medium.Name = "rdb_Medium";
-            this.rdb_Medium.Size = new System.Drawing.Size(50, 17);
-            this.rdb_Medium.TabIndex = 11;
-            this.rdb_Medium.TabStop = true;
-            this.rdb_Medium.Text = "Mittel";
-            this.rdb_Medium.UseVisualStyleBackColor = true;
+            this.rdb_VeryHard.AutoSize = true;
+            this.rdb_VeryHard.Location = new System.Drawing.Point(470, 210);
+            this.rdb_VeryHard.Name = "rdb_VeryHard";
+            this.rdb_VeryHard.Size = new System.Drawing.Size(86, 17);
+            this.rdb_VeryHard.TabIndex = 14;
+            this.rdb_VeryHard.TabStop = true;
+            this.rdb_VeryHard.Text = "Sehr Schwer";
+            this.rdb_VeryHard.UseVisualStyleBackColor = true;
             // 
-            // rdb_Hard
+            // rdb_VeryEasy
             // 
-            this.rdb_Hard.AutoSize = true;
-            this.rdb_Hard.Location = new System.Drawing.Point(470, 153);
-            this.rdb_Hard.Name = "rdb_Hard";
-            this.rdb_Hard.Size = new System.Drawing.Size(61, 17);
-            this.rdb_Hard.TabIndex = 12;
-            this.rdb_Hard.TabStop = true;
-            this.rdb_Hard.Text = "Schwer";
-            this.rdb_Hard.UseVisualStyleBackColor = true;
+            this.rdb_VeryEasy.AutoSize = true;
+            this.rdb_VeryEasy.Location = new System.Drawing.Point(470, 117);
+            this.rdb_VeryEasy.Name = "rdb_VeryEasy";
+            this.rdb_VeryEasy.Size = new System.Drawing.Size(86, 17);
+            this.rdb_VeryEasy.TabIndex = 13;
+            this.rdb_VeryEasy.TabStop = true;
+            this.rdb_VeryEasy.Text = "Sehr Einfach";
+            this.rdb_VeryEasy.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -234,6 +273,9 @@
         private System.Windows.Forms.RadioButton rdb_Hard;
         private System.Windows.Forms.RadioButton rdb_Medium;
         private System.Windows.Forms.RadioButton rdb_Easy;
+        private System.Windows.Forms.RadioButton rdb_Ultra;
+        private System.Windows.Forms.RadioButton rdb_VeryHard;
+        private System.Windows.Forms.RadioButton rdb_VeryEasy;
 
 
 

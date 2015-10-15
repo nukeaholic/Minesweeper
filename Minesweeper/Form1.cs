@@ -118,9 +118,12 @@ namespace Minesweeper
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            if (rdb_VeryEasy.Checked == true)
+            {
+                difficulty = 0.05;
+            }
 
-            if (rdb_Easy.Checked == true)
+            else if (rdb_Easy.Checked == true)
             {
                 difficulty = 0.10;
             }
@@ -135,7 +138,17 @@ namespace Minesweeper
                 difficulty = 0.20;
             }
 
-            if (rdb_Easy.Checked == true || rdb_Medium.Checked == true || rdb_Hard.Checked == true)
+            else if (rdb_VeryHard.Checked == true)
+            {
+                difficulty = 0.25;
+            }
+
+            else if (rdb_Ultra.Checked == true)
+            {
+                difficulty = 0.30;
+            }
+
+            if (rdb_VeryEasy.Checked == true || rdb_Easy.Checked == true || rdb_Medium.Checked == true || rdb_Hard.Checked == true || rdb_VeryHard.Checked == true || rdb_Ultra.Checked == true)
             {
                 double mines = Convert.ToInt32(und_X.Value) * Convert.ToInt32(und_Y.Value) * difficulty;
                 Console.WriteLine("*******************************************\n\n" + mines + "\n\n*******************************************");
