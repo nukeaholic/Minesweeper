@@ -60,6 +60,7 @@ namespace Minesweeper
             if (mine == true)
             {
                 MessageBox.Show("boom");
+                Form1.Instance().Close();
             }
 
             else 
@@ -67,7 +68,6 @@ namespace Minesweeper
                 if (button.suMines == 0)
                 {
                     buttonRevealed(button);
-                    button.check = true;
                     foreach (Field feld in button.surroundings)
                     {
                         if (feld.check == false)
@@ -88,20 +88,25 @@ namespace Minesweeper
 
         private void buttonRevealed(Field button)
         {
-            Form1.spielfeld.fieldsRevealed++;
+            if (button.check == false)
+            {
+                Form1.Instance().spielfeld.fieldsRevealed++;
+            }
+            
             button.Text = "" + button.suMines;
             button.BackColor = Color.White;
             button.Enabled = false;
+            button.check = true;
         }
 
         public static void checkWin()
         {
-            int fields = Convert.ToInt32() * Convert.ToInt32(und_Y.Value);
+            int fields = Convert.ToInt32(Form1.Instance().und_X.Value) * Convert.ToInt32(Form1.Instance().und_Y.Value);
 
-
-            if (Form1.spielfeld.fieldsRevealed == fields - Form1.mines)
+            if (Form1.Instance().spielfeld.fieldsRevealed == fields - Convert.ToInt32(Form1.Instance().mines))
             {
                 MessageBox.Show("Gewonnen!");
+                Form1.Instance().Close();
             }
         }
     }

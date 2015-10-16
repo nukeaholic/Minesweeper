@@ -13,17 +13,22 @@ namespace Minesweeper
 {
     public partial class Form1 : Form
     {
-        public static TableLayoutPanel myDataGridView = new TableLayoutPanel();
-        
-        public static Playground spielfeld = new Playground();
+        private static Form1 _instance;
 
-        public double difficulty;
-        public static double mines;
+        private TableLayoutPanel myDataGridView = new TableLayoutPanel();
 
+        public Playground spielfeld = new Playground();
 
-        Singleton s1 = Singleton.Instance();
+        private double difficulty;
+        public double mines;
 
-        Singleton s2 = Singleton.Instance();
+        private const double difVeryEasy = 0.05;
+        private const double difEasy = 0.10;
+        private const double difMedium = 0.15;
+        private const double difHard = 0.20;
+        private const double difVeryHard = 0.25;
+        private const double difUltra = 0.30;
+
 
 
         public void SetupGrid(int x, int y, int mines)
@@ -118,7 +123,7 @@ namespace Minesweeper
             }
         }
 
-        public Form1()
+        private Form1()
         {
             InitializeComponent();            
         }
@@ -127,32 +132,32 @@ namespace Minesweeper
         {
             if (rdb_VeryEasy.Checked == true)
             {
-                difficulty = 0.05;
+                difficulty = difVeryEasy;
             }
 
             else if (rdb_Easy.Checked == true)
             {
-                difficulty = 0.10;
+                difficulty = difEasy;
             }
 
             else if (rdb_Medium.Checked == true)
             {
-                difficulty = 0.15;
+                difficulty = difMedium;
             }
 
             else if (rdb_Hard.Checked == true)
             {
-                difficulty = 0.20;
+                difficulty = difHard;
             }
 
             else if (rdb_VeryHard.Checked == true)
             {
-                difficulty = 0.25;
+                difficulty = difVeryHard;
             }
 
             else if (rdb_Ultra.Checked == true)
             {
-                difficulty = 0.30;
+                difficulty = difUltra;
             }
 
             if (rdb_VeryEasy.Checked == true || rdb_Easy.Checked == true || rdb_Medium.Checked == true || rdb_Hard.Checked == true || rdb_VeryHard.Checked == true || rdb_Ultra.Checked == true)
@@ -168,22 +173,13 @@ namespace Minesweeper
             {
                 MessageBox.Show("Bitte einen Schwierigkeitsgrad auswählen.");
             }
-        }        
-    }
-
-    class Singleton
-    {
-        private static Singleton _instance;
-        protected Singleton()
-        {
-
         }
-        
-        public static Singleton Instance()
+
+        public static Form1 Instance()
         {
             if (_instance == null)
             {
-                _instance = new Singleton();
+                _instance = new Form1();
             }
             return _instance;
         }
