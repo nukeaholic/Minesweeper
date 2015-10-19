@@ -61,7 +61,7 @@ namespace Minesweeper
 
                     i--;
                     getSurroundings(i, k, x, y, a, b);
-                    
+
                     k--;
                     getSurroundings(i, k, x, y, a, b);
 
