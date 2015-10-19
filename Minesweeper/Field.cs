@@ -59,6 +59,13 @@ namespace Minesweeper
         {
             if (mine == true)
             {
+                foreach (Field feld in Form1.Instance().spielfeld.spielfeld)
+                {
+                    if (feld.mine == true){
+                        feld.Text = "M";
+                        feld.BackColor = Color.Red;
+                    }
+                }
                 MessageBox.Show("boom");
                 Form1.Instance().Close();
             }

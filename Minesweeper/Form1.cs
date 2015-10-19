@@ -26,8 +26,6 @@ namespace Minesweeper
         private const double difEasy = 0.10;
         private const double difMedium = 0.15;
         private const double difHard = 0.20;
-        private const double difVeryHard = 0.25;
-        private const double difUltra = 0.30;
 
 
 
@@ -150,17 +148,7 @@ namespace Minesweeper
                 difficulty = difHard;
             }
 
-            else if (rdb_VeryHard.Checked == true)
-            {
-                difficulty = difVeryHard;
-            }
-
-            else if (rdb_Ultra.Checked == true)
-            {
-                difficulty = difUltra;
-            }
-
-            if (rdb_VeryEasy.Checked == true || rdb_Easy.Checked == true || rdb_Medium.Checked == true || rdb_Hard.Checked == true || rdb_VeryHard.Checked == true || rdb_Ultra.Checked == true)
+            if (rdb_VeryEasy.Checked == true || rdb_Easy.Checked == true || rdb_Medium.Checked == true || rdb_Hard.Checked == true )
             {
                 mines = Convert.ToInt32(und_X.Value) * Convert.ToInt32(und_Y.Value) * difficulty;
                 Console.WriteLine("*******************************************\n\n" + mines + "\n\n*******************************************");

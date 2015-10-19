@@ -30,6 +30,7 @@
         {
             this.tbctrl_Window = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.rdb_VeryEasy = new System.Windows.Forms.RadioButton();
             this.rdb_Hard = new System.Windows.Forms.RadioButton();
             this.rdb_Medium = new System.Windows.Forms.RadioButton();
             this.rdb_Easy = new System.Windows.Forms.RadioButton();
@@ -40,9 +41,6 @@
             this.lbl_X = new System.Windows.Forms.Label();
             this.btn_start = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.rdb_Ultra = new System.Windows.Forms.RadioButton();
-            this.rdb_VeryHard = new System.Windows.Forms.RadioButton();
-            this.rdb_VeryEasy = new System.Windows.Forms.RadioButton();
             this.tbctrl_Window.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.und_Y)).BeginInit();
@@ -65,8 +63,6 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.rdb_Ultra);
-            this.tabPage1.Controls.Add(this.rdb_VeryHard);
             this.tabPage1.Controls.Add(this.rdb_VeryEasy);
             this.tabPage1.Controls.Add(this.rdb_Hard);
             this.tabPage1.Controls.Add(this.rdb_Medium);
@@ -84,6 +80,17 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // rdb_VeryEasy
+            // 
+            this.rdb_VeryEasy.AutoSize = true;
+            this.rdb_VeryEasy.Location = new System.Drawing.Point(470, 117);
+            this.rdb_VeryEasy.Name = "rdb_VeryEasy";
+            this.rdb_VeryEasy.Size = new System.Drawing.Size(86, 17);
+            this.rdb_VeryEasy.TabIndex = 13;
+            this.rdb_VeryEasy.TabStop = true;
+            this.rdb_VeryEasy.Text = "Sehr Einfach";
+            this.rdb_VeryEasy.UseVisualStyleBackColor = true;
             // 
             // rdb_Hard
             // 
@@ -209,39 +216,6 @@
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // rdb_Ultra
-            // 
-            this.rdb_Ultra.AutoSize = true;
-            this.rdb_Ultra.Location = new System.Drawing.Point(470, 233);
-            this.rdb_Ultra.Name = "rdb_Ultra";
-            this.rdb_Ultra.Size = new System.Drawing.Size(47, 17);
-            this.rdb_Ultra.TabIndex = 15;
-            this.rdb_Ultra.TabStop = true;
-            this.rdb_Ultra.Text = "Ultra";
-            this.rdb_Ultra.UseVisualStyleBackColor = true;
-            // 
-            // rdb_VeryHard
-            // 
-            this.rdb_VeryHard.AutoSize = true;
-            this.rdb_VeryHard.Location = new System.Drawing.Point(470, 210);
-            this.rdb_VeryHard.Name = "rdb_VeryHard";
-            this.rdb_VeryHard.Size = new System.Drawing.Size(86, 17);
-            this.rdb_VeryHard.TabIndex = 14;
-            this.rdb_VeryHard.TabStop = true;
-            this.rdb_VeryHard.Text = "Sehr Schwer";
-            this.rdb_VeryHard.UseVisualStyleBackColor = true;
-            // 
-            // rdb_VeryEasy
-            // 
-            this.rdb_VeryEasy.AutoSize = true;
-            this.rdb_VeryEasy.Location = new System.Drawing.Point(470, 117);
-            this.rdb_VeryEasy.Name = "rdb_VeryEasy";
-            this.rdb_VeryEasy.Size = new System.Drawing.Size(86, 17);
-            this.rdb_VeryEasy.TabIndex = 13;
-            this.rdb_VeryEasy.TabStop = true;
-            this.rdb_VeryEasy.Text = "Sehr Einfach";
-            this.rdb_VeryEasy.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -271,8 +245,6 @@
         private System.Windows.Forms.RadioButton rdb_Hard;
         private System.Windows.Forms.RadioButton rdb_Medium;
         private System.Windows.Forms.RadioButton rdb_Easy;
-        private System.Windows.Forms.RadioButton rdb_Ultra;
-        private System.Windows.Forms.RadioButton rdb_VeryHard;
         private System.Windows.Forms.RadioButton rdb_VeryEasy;
         public System.Windows.Forms.NumericUpDown und_Y;
         public System.Windows.Forms.NumericUpDown und_X;
