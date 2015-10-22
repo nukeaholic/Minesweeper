@@ -67,7 +67,7 @@ namespace Minesweeper
                     }
                 }
                 MessageBox.Show("boom");
-                Form1.Instance().Close();
+                gameOver();
             }
 
             else 
@@ -113,8 +113,23 @@ namespace Minesweeper
             if (Form1.Instance().spielfeld.fieldsRevealed == fields - Convert.ToInt32(Form1.Instance().mines))
             {
                 MessageBox.Show("Gewonnen!");
-                Form1.Instance().Close();
+                gameOver();
             }
+        }
+
+        public static void gameOver()
+        {
+            Form1.Instance().tbctrl_Window.SelectedIndex = 0;
+            Form1.Instance().tbctrl_Window.TabPages[1].Controls.Remove(Form1.Instance().myDataGridView);
+            Form1.Instance().spielfeld.fieldsRevealed = 0;
+
+            for (int i = 0; i < Form1.Instance().und_X.Value; i++)
+            {
+                for (int k = 0; k < Form1.Instance().und_Y.Value; k++)
+                {
+                    Form1.Instance().myDataGridView.Controls.Remove(Form1.Instance().spielfeld.spielfeld[i, k]);
+                }
+            }            
         }
     }
 }

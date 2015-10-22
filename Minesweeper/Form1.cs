@@ -15,7 +15,7 @@ namespace Minesweeper
     {
         private static Form1 _instance;
 
-        private TableLayoutPanel myDataGridView = new TableLayoutPanel();
+        public TableLayoutPanel myDataGridView = new TableLayoutPanel();
 
         public Playground spielfeld = new Playground();
 
@@ -55,42 +55,25 @@ namespace Minesweeper
             for (int i = 0; i < x; i++)
             {
                 for (int k = 0; k < y; k++)
-                { 
-                    int a = i;
-                    int b = k;
-
-                    i--;
-                    getSurroundings(i, k, x, y, a, b);
-
-                    k--;
-                    getSurroundings(i, k, x, y, a, b);
-
-                    i++;
-                    getSurroundings(i, k, x, y, a, b);
-                    
-                    i++;
-                    getSurroundings(i, k, x, y, a, b);
-                    
-                    k++;
-                    getSurroundings(i, k, x, y, a, b);
-                    
-                    k++;
-                    getSurroundings(i, k, x, y, a, b);
-                    
-                    i--;
-                    getSurroundings(i, k, x, y, a, b);                    
-                        
-                    i--;
-                    getSurroundings(i, k, x, y, a, b);
-
-                    i = a;
-                    k = b;
+                {
+                    for (int j = i - 1; j < i + 1; j++)
+                    {
+                        for (int l = k - 1; l < k + 1; l++)
+                        {
+                            if (j >= 0 && j < x && l >= 0 && l < y)
+                            {
+                                if (j != i && l != k)
+                                {
+                                    spielfeld.spielfeld[i, k].surroundings.Add(spielfeld.spielfeld[j, l]);
+                                }                                
+                            }
+                        }
+                    }
                 }
             }
 
-
             Random rnd = new Random();
-            for (int j = 0; j < mines; j++)
+            for (int m = 0; m < mines; m++)
             {
                 int xx = rnd.Next(x);
                 int yy = rnd.Next(y);
@@ -107,18 +90,10 @@ namespace Minesweeper
 
                 else
                 {
-                    j--;
+                    m--;
                 }
             }
             myDataGridView.AutoSize = true;            
-        }
-
-        public void getSurroundings(int i, int k, int x, int y, int a, int b)
-        {
-            if (i >= 0 && i < x && k >= 0 && k < y)
-            {
-                spielfeld.spielfeld[a, b].surroundings.Add(spielfeld.spielfeld[i, k]);
-            }
         }
 
         private Form1()
