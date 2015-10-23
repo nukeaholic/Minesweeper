@@ -65,7 +65,7 @@ namespace Minesweeper
                                 if (j != i && l != k)
                                 {
                                     spielfeld.spielfeld[i, k].surroundings.Add(spielfeld.spielfeld[j, l]);
-                                }                                
+                                }
                             }
                         }
                     }
