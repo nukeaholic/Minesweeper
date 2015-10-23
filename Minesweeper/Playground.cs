@@ -10,13 +10,62 @@ namespace Minesweeper
 {
     public class Playground
     {
-        public Field[,] spielfeld;
+        private Field[,] spielfeld;
 
-        public int mines;
-        public int fieldsRevealed;
+        private int mines;
+        private int fieldsRevealed;
+        private int markings = 0;
 
-        
+        public int Mines
+        {
+            get
+            {
+                return this.mines;
+            }
 
-        
+            set
+            {
+                this.mines = value;
+            }
+        }
+
+        public int FieldsRevealed
+        {
+            get
+            {
+                return this.fieldsRevealed;
+            }
+
+            set
+            {
+                this.fieldsRevealed = value;
+            }
+        }
+
+        public int Markings
+        {
+            get
+            {
+                return this.markings;
+            }
+
+            set
+            {
+                this.markings = value;
+            }
+        }
+
+        public Field[,] Spielfeld
+        {
+            get
+            {
+                return this.spielfeld;
+            }
+
+            set
+            {
+                this.spielfeld = value;
+            }
+        }        
     }
 }
