@@ -25,8 +25,6 @@ namespace Minesweeper
 
         private void MyClick(object sender, MouseEventArgs e)
         {
-            //MessageBox.Show(suMines.ToString());
-
             Field button = (Field)sender;
 
             if (e.Button == System.Windows.Forms.MouseButtons.Left)
@@ -96,7 +94,7 @@ namespace Minesweeper
         }
 
         private void buttonRevealed(Field button)
-        {
+        { 
             if (button.check == false)
             {
                 Form1.Instance().Spielfeld.FieldsRevealed++;
@@ -107,6 +105,7 @@ namespace Minesweeper
                 button.marked = false;
                 Form1.Instance().Spielfeld.Markings--;
             }
+
             
             button.Text = "" + button.suMines;
             button.BackColor = Color.White;

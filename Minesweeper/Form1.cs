@@ -40,12 +40,12 @@ namespace Minesweeper
             getSurroundings(x, y);
             
             setMines(x, y, mines);
-            myDataGridView.AutoSize = true;            
+            myDataGridView.AutoSize = true;
         }
 
         private Form1()
         {
-            InitializeComponent();            
+            InitializeComponent();
         }
 
         private void btn_Start_onClick(object sender, EventArgs e)
