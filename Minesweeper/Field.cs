@@ -117,7 +117,7 @@ namespace Minesweeper
         {
             int fields = Convert.ToInt32(Form1.Instance().und_X.Value) * Convert.ToInt32(Form1.Instance().und_Y.Value);
 
-            if (Form1.Instance().Spielfeld.FieldsRevealed == fields - Convert.ToInt32(Form1.Instance().mines))
+            if (Form1.Instance().Spielfeld.FieldsRevealed == fields - Convert.ToInt32(Form1.Instance().Mines))
             {
                 MessageBox.Show("Gewonnen!");
                 gameOver();

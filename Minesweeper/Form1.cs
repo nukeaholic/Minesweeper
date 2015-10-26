@@ -20,7 +20,7 @@ namespace Minesweeper
         private Playground spielfeld = new Playground();
 
         private double difficulty;
-        public double mines;
+        private double mines;
 
         private const double difVeryEasy = 0.05;
         private const double difEasy = 0.10;
@@ -182,6 +182,19 @@ namespace Minesweeper
             set
             {
                 this.myDataGridView = value;
+            }
+        }
+
+        public double Mines
+        {
+            get
+            {
+                return this.mines;
+            }
+
+            set
+            {
+                this.mines = value;
             }
         }
     }
