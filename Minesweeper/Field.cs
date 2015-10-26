@@ -42,7 +42,7 @@ namespace Minesweeper
             if (marked == false)
             {
                 button.BackColor = Color.OrangeRed;
-                marked = false;
+                marked = true;
                 Form1.Instance().Spielfeld.Markings++;
             }
 
