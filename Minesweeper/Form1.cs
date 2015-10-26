@@ -106,7 +106,6 @@ namespace Minesweeper
                     spielfeld.Spielfeld[i, k].Width = 30;
                     spielfeld.Spielfeld[i, k].Height = 30;
 
-
                     myDataGridView.Controls.Add(spielfeld.Spielfeld[i, k], i, k);
                 }
             }
