@@ -43,14 +43,16 @@ namespace Minesweeper
             {
                 button.BackColor = Color.OrangeRed;
                 marked = true;
-                Form1.Instance().Spielfeld.Markings++;
+                frm_Main.Instance().Spielfeld.Markings++;
+                frm_Main.Instance().setLabelMarkText(frm_Main.Instance().MarkingsCounter);
             }
 
             else
             {
                 button.BackColor = Color.Gray;
                 marked = false;
-                Form1.Instance().Spielfeld.Markings--;
+                frm_Main.Instance().Spielfeld.Markings--;
+                frm_Main.Instance().setLabelMarkText(frm_Main.Instance().MarkingsCounter);
             }
             checkWin();           
         }
@@ -59,7 +61,7 @@ namespace Minesweeper
         {
             if (mine == true)
             {
-                foreach (Field feld in Form1.Instance().Spielfeld.Spielfeld)
+                foreach (Field feld in frm_Main.Instance().Spielfeld.Spielfeld)
                 {
                     if (feld.mine == true){
                         feld.Text = "M";
@@ -97,13 +99,14 @@ namespace Minesweeper
         { 
             if (button.check == false)
             {
-                Form1.Instance().Spielfeld.FieldsRevealed++;
+                frm_Main.Instance().Spielfeld.FieldsRevealed++;
             }
 
             if (button.marked == true)
             {
                 button.marked = false;
-                Form1.Instance().Spielfeld.Markings--;
+                frm_Main.Instance().Spielfeld.Markings--;
+                frm_Main.Instance().setLabelMarkText(frm_Main.Instance().MarkingsCounter);
             }
 
             
@@ -115,9 +118,9 @@ namespace Minesweeper
 
         public static void checkWin()
         {
-            int fields = Convert.ToInt32(Form1.Instance().und_X.Value) * Convert.ToInt32(Form1.Instance().und_Y.Value);
+            int fields = Convert.ToInt32(frm_Main.Instance().und_X.Value) * Convert.ToInt32(frm_Main.Instance().und_Y.Value);
 
-            if (Form1.Instance().Spielfeld.FieldsRevealed == fields - Convert.ToInt32(Form1.Instance().Mines))
+            if (frm_Main.Instance().Spielfeld.FieldsRevealed == fields - Convert.ToInt32(frm_Main.Instance().Mines))
             {
                 MessageBox.Show("Gewonnen!");
                 gameOver();
@@ -126,15 +129,16 @@ namespace Minesweeper
 
         public static void gameOver()
         {
-            Form1.Instance().tbctrl_Window.SelectedIndex = 0;
-            Form1.Instance().tbctrl_Window.TabPages[1].Controls.Remove(Form1.Instance().MyDataGridView);
-            Form1.Instance().Spielfeld.FieldsRevealed = 0;
+            frm_Main.Instance().tbctrl_Window.SelectedIndex = 0;
+            frm_Main.Instance().tbctrl_Window.TabPages[1].Controls.Remove(frm_Main.Instance().MyDataGridView);
+            frm_Main.Instance().Spielfeld.FieldsRevealed = 0;
+            frm_Main.Instance().Spielfeld.Markings = 0;
 
-            for (int i = 0; i < Form1.Instance().und_X.Value; i++)
+            for (int i = 0; i < frm_Main.Instance().und_X.Value; i++)
             {
-                for (int k = 0; k < Form1.Instance().und_Y.Value; k++)
+                for (int k = 0; k < frm_Main.Instance().und_Y.Value; k++)
                 {
-                    Form1.Instance().MyDataGridView.Controls.Remove(Form1.Instance().Spielfeld.Spielfeld[i, k]);
+                    frm_Main.Instance().MyDataGridView.Controls.Remove(frm_Main.Instance().Spielfeld.Spielfeld[i, k]);
                 }
             }
         }

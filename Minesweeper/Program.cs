@@ -16,7 +16,7 @@ namespace Minesweeper
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(Form1.Instance());
+            Application.Run(frm_Main.Instance());
         }
     }
 }

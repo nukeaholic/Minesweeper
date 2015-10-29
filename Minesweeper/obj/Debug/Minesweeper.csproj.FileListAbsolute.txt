@@ -2,8 +2,8 @@ d:\users\ehanss\documents\visual studio 2013\Projects\Minesweeper\Minesweeper\bi
 D:\Users\ehanss\documents\visual studio 2013\Projects\Minesweeper\Minesweeper\bin\Debug\Minesweeper.exe
 D:\Users\ehanss\documents\visual studio 2013\Projects\Minesweeper\Minesweeper\bin\Debug\Minesweeper.pdb
 D:\Users\ehanss\documents\visual studio 2013\Projects\Minesweeper\Minesweeper\obj\Debug\Minesweeper.csprojResolveAssemblyReference.cache
-D:\Users\ehanss\documents\visual studio 2013\Projects\Minesweeper\Minesweeper\obj\Debug\Minesweeper.Form1.resources
 D:\Users\ehanss\documents\visual studio 2013\Projects\Minesweeper\Minesweeper\obj\Debug\Minesweeper.Properties.Resources.resources
 D:\Users\ehanss\documents\visual studio 2013\Projects\Minesweeper\Minesweeper\obj\Debug\Minesweeper.csproj.GenerateResource.Cache
 D:\Users\ehanss\documents\visual studio 2013\Projects\Minesweeper\Minesweeper\obj\Debug\Minesweeper.exe
 D:\Users\ehanss\documents\visual studio 2013\Projects\Minesweeper\Minesweeper\obj\Debug\Minesweeper.pdb
+D:\Users\ehanss\documents\visual studio 2013\Projects\Minesweeper\Minesweeper\obj\Debug\Minesweeper.frm_Main.resources

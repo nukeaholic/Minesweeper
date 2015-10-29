@@ -11,9 +11,12 @@ using System.Text.RegularExpressions;
 
 namespace Minesweeper
 {
-    public partial class Form1 : Form
+    public partial class frm_Main : Form
     {
-        private static Form1 _instance;
+        private static frm_Main _instance;
+
+        private Label markingsCounter = new Label();
+        private Label mineCounter = new Label();
 
         private TableLayoutPanel myDataGridView = new TableLayoutPanel();
 
@@ -35,15 +38,41 @@ namespace Minesweeper
             spielfeld.Spielfeld = new Field[x, y];
             tbctrl_Window.TabPages[1].Controls.Add(myDataGridView);
 
+            frm_Main.Instance().Width = myDataGridView.Width + 100;
+            frm_Main.Instance().Height = myDataGridView.Height + 50;
+
 
             createTable(x, y);
             getSurroundings(x, y);
             
             setMines(x, y, mines);
             myDataGridView.AutoSize = true;
+
+            setLables();            
         }
 
-        private Form1()
+        private void setLables()
+        {
+
+
+            markingsCounter.Location = new Point(myDataGridView.Width +  50, 50);
+            mineCounter.Location = new Point(myDataGridView.Width + 50, 100);
+
+            markingsCounter.AutoSize = true;
+
+            setLabelMarkText(markingsCounter);
+            mineCounter.Text = "Anzahl Minen: " + spielfeld.Mines;
+
+            tbctrl_Window.TabPages[1].Controls.Add(markingsCounter);
+            tbctrl_Window.TabPages[1].Controls.Add(mineCounter);
+        }
+
+        public void setLabelMarkText(Label label)
+        {
+            label.Text = "Anzahl Markierungen: " + spielfeld.Markings;
+        }
+
+        private frm_Main()
         {
             InitializeComponent();
         }
@@ -86,11 +115,11 @@ namespace Minesweeper
             }
         }
 
-        public static Form1 Instance()
+        public static frm_Main Instance()
         {
             if (_instance == null)
             {
-                _instance = new Form1();
+                _instance = new frm_Main();
             }
             return _instance;
         }
@@ -195,6 +224,32 @@ namespace Minesweeper
             set
             {
                 this.mines = value;
+            }
+        }
+
+        public Label MarkingsCounter
+        {
+            get
+            {
+                return this.markingsCounter;
+            }
+
+            set
+            {
+                this.markingsCounter = value;
+            }
+        }
+
+        public Label MineCounter
+        {
+            get
+            {
+                return this.mineCounter;
+            }
+
+            set
+            {
+                this.mineCounter = value;
             }
         }
     }
