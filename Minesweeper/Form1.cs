@@ -52,8 +52,6 @@ namespace Minesweeper
 
         private void setLables()
         {
-
-
             markingsCounter.Location = new Point(myDataGridView.Width +  50, 50);
             mineCounter.Location = new Point(myDataGridView.Width + 50, 100);
 
