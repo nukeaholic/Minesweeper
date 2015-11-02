@@ -18,7 +18,7 @@ namespace Minesweeper
         private Label markingsCounter = new Label();
         private Label mineCounter = new Label();
 
-        private TableLayoutPanel myDataGridView = new TableLayoutPanel();
+        private TableLayoutPanel myDataGridView;
 
         private Playground spielfeld = new Playground();
 
@@ -31,16 +31,12 @@ namespace Minesweeper
         private const double difHard = 0.20;
 
 
-
         public void SetupGrid(int x, int y, int mines)
         {
+            myDataGridView = new TableLayoutPanel();
             spielfeld.Mines = mines;
             spielfeld.Spielfeld = new Field[x, y];
             tbctrl_Window.TabPages[1].Controls.Add(myDataGridView);
-
-            frm_Main.Instance().Width = myDataGridView.Width + 100;
-            frm_Main.Instance().Height = myDataGridView.Height + 50;
-
 
             createTable(x, y);
             getSurroundings(x, y);
@@ -48,8 +44,11 @@ namespace Minesweeper
             setMines(x, y, mines);
             myDataGridView.AutoSize = true;
 
-            setLables();            
-        }
+            setLables();
+
+            frm_Main.Instance().Width = myDataGridView.Width + 200;
+            frm_Main.Instance().Height = myDataGridView.Height + 50;
+        }        
 
         private void setLables()
         {

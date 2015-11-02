@@ -130,9 +130,11 @@ namespace Minesweeper
         public static void gameOver()
         {
             frm_Main.Instance().tbctrl_Window.SelectedIndex = 0;
-            frm_Main.Instance().tbctrl_Window.TabPages[1].Controls.Remove(frm_Main.Instance().MyDataGridView);
+            frm_Main.Instance().tbctrl_Window.TabPages[1].Controls.Remove(frm_Main.Instance().MyDataGridView);            
             frm_Main.Instance().Spielfeld.FieldsRevealed = 0;
             frm_Main.Instance().Spielfeld.Markings = 0;
+            frm_Main.Instance().Width = 600;
+            frm_Main.Instance().Height = 270;
 
             for (int i = 0; i < frm_Main.Instance().und_X.Value; i++)
             {
@@ -141,6 +143,7 @@ namespace Minesweeper
                     frm_Main.Instance().MyDataGridView.Controls.Remove(frm_Main.Instance().Spielfeld.Spielfeld[i, k]);
                 }
             }
+            frm_Main.Instance().MyDataGridView = null;
         }
 
         public Boolean Check
