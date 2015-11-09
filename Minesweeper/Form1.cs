@@ -48,8 +48,8 @@ namespace Minesweeper
             frm_Main.Instance().Width = myDataGridView.Width + 200;
             frm_Main.Instance().Height = myDataGridView.Height + 50;
 
-            tmr_load.Enabled = true;
             Instance().Visible = false;
+            tmr_load.Enabled = true;
             
         }        
 
