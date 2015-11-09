@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tbctrl_Window = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.rdb_VeryEasy = new System.Windows.Forms.RadioButton();
@@ -41,6 +42,7 @@
             this.lbl_X = new System.Windows.Forms.Label();
             this.btn_start = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tmr_load = new System.Windows.Forms.Timer(this.components);
             this.tbctrl_Window.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.und_Y)).BeginInit();
@@ -211,10 +213,15 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 5);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(580, 220);
+            this.tabPage2.Size = new System.Drawing.Size(576, 223);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // tmr_load
+            // 
+            this.tmr_load.Interval = 1000;
+            this.tmr_load.Tick += new System.EventHandler(this.tmr_load_Tick);
             // 
             // frm_Main
             // 
@@ -248,6 +255,7 @@
         private System.Windows.Forms.RadioButton rdb_VeryEasy;
         public System.Windows.Forms.NumericUpDown und_Y;
         public System.Windows.Forms.NumericUpDown und_X;
+        private System.Windows.Forms.Timer tmr_load;
 
 
 

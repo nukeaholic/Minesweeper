@@ -32,15 +32,14 @@ namespace Minesweeper
 
 
         public void SetupGrid(int x, int y, int mines)
-        {
+        {  
             myDataGridView = new TableLayoutPanel();
+            tbctrl_Window.TabPages[1].Controls.Add(myDataGridView);            
             spielfeld.Mines = mines;
             spielfeld.Spielfeld = new Field[x, y];
-            tbctrl_Window.TabPages[1].Controls.Add(myDataGridView);
-
-            createTable(x, y);
-            getSurroundings(x, y);
             
+            createTable(x, y);
+            getSurroundings(x, y);            
             setMines(x, y, mines);
             myDataGridView.AutoSize = true;
 
@@ -48,6 +47,10 @@ namespace Minesweeper
 
             frm_Main.Instance().Width = myDataGridView.Width + 200;
             frm_Main.Instance().Height = myDataGridView.Height + 50;
+
+            tmr_load.Enabled = true;
+            Instance().Visible = false;
+            
         }        
 
         private void setLables()
@@ -183,6 +186,12 @@ namespace Minesweeper
                     m--;
                 }
             }
+        }
+
+        private void tmr_load_Tick(object sender, EventArgs e)
+        {
+            Instance().Visible = true;
+            tmr_load.Enabled = false;
         }
 
         public Playground Spielfeld
