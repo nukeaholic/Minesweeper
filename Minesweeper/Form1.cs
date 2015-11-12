@@ -34,21 +34,20 @@ namespace Minesweeper
         public void SetupGrid(int x, int y, int mines)
         {  
             myDataGridView = new TableLayoutPanel();
-            tbctrl_Window.TabPages[1].Controls.Add(myDataGridView);            
+            myDataGridView.Visible = false;         
             spielfeld.Mines = mines;
             spielfeld.Spielfeld = new Field[x, y];
 
             myDataGridView.AutoSize = true;
             createTable(x, y);
-            getSurroundings(x, y);            
-            setMines(x, y, mines);            
-            setLables();
+            getSurroundings(x, y);
+            setMines(x, y, mines);
 
+            tbctrl_Window.TabPages[1].Controls.Add(myDataGridView);
+            myDataGridView.Visible = true;
+            setLables();
             frm_Main.Instance().Width = myDataGridView.Width + 200;
             frm_Main.Instance().Height = myDataGridView.Height + 50;
-
-            Instance().Visible = false;
-            tmr_load.Enabled = true;            
         }        
 
         private void setLables()
